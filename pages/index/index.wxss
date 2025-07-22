@@ -1,0 +1,53 @@
+.section{
+  height: 100%;
+}
+  .section image {
+    height: 38%;
+    width: 100%;
+  } 
+  .section .content {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .section .sub-header {
+    font-size: 32rpx;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+  .section .header {
+    color: black;
+    font-weight: bold;
+    font-size: 72rpx;
+    margin-bottom: 8px;
+  }
+  .section .desc {
+    margin-bottom: 32px;
+    padding: 0, 12%;
+  }
+  .section .action {
+    text-align: center;
+  }
+  .section .button {
+    display: inline-block;
+    margin: 4px;
+    background-color: "#e0e1e2";
+    padding: 0 24px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 32rpx;
+    transition: 0.3 all;
+  }
+  .section .button::after {
+    content: none;
+  }
+  .button.primary {
+    background-color: #000000;
+    color:rgba(255, 255, 255, 0.85)
+  }
+  .button-hover {
+    opacity: 0.75;
+  }
