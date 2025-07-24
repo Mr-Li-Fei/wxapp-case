@@ -1,0 +1,91 @@
+/* pages/entries/index.wxss */
+.entries {
+  /* height: 100%; */
+  width: 100%;
+}
+  .cover {
+    position: relative;
+  }
+  .entries image {
+    width: 100%;
+    height: 41.8vh;
+  }
+  .entries .content{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 8px 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 5px 19px rgba(0, 0, 0, 0.5);
+    /* 线性渐变 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6) 90%);
+  }
+  .entries .header {
+    font-size: 36rpx;
+    font-weight: bold;
+    letter-spacing: 4rpx;
+  }
+  .entries .sub_header {
+    font-size: 26rpx;
+    font-weight: normal;
+    letter-spacing: 4rpx;
+    text-transform: uppercase;
+  }
+  .entries .price {
+    font-size: 26rpx;
+  }
+.spec {
+  display: flex;
+  border-bottom: 1px solid #ededed;
+  font-size: 24rpx;
+}
+  .spec .item {
+    padding: 64rpx;
+    border-right: 1px sol id #ededed;
+    width: 100%;
+  }
+  .spec .item .value text{
+    font-size: 60rpx;
+    margin-right: 8rpx;
+  }
+.action {
+  text-align: center;
+  margin-top: 36px;
+  padding: 48px;
+}
+  .action .desc {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .action button {
+    width: 40%;
+    background-color: black;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+  }
+.story {
+  height: 100%;
+}
+  .story image {
+    width: 100%;
+  }
+  .story .content {
+    padding: 46px;
+    text-align: center;
+  }
+  .story .header {
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .story .desc {
+    padding: 0 46px; 
+  }
+  .story image {
+    height: 41.8vh;
+  }

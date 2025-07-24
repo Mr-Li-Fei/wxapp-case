@@ -1,10 +1,24 @@
 const app = getApp();
 Page({
   data: {
-    slides: []
+    slides: [],
+    entries: null
+  },
+  bookDrive() {
+    wx.showModal({
+      title: '暂不支持',
+    })
+  },
+  onMore(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: `/pages/entries/index?id=${event.target.dataset.id}`,
+    })
   },
   onLoad() {
-    this.setData({slides: app.globalData.slides});
-    console.log(app.globalData.slides, this.data.slides,'app');
+    this.setData({
+      slides: app.globalData.slides,
+      entries: app.globalData.vehicles,
+    });
   }
 })

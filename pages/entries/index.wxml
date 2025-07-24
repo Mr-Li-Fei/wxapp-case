@@ -1,0 +1,62 @@
+<view class="entries">
+  <view class="cover">
+    <view class="image">
+      <image src="{{entries.image}}" mode="aspectFill"/>
+    </view>
+    <view class="content">
+      <view class="header-content">
+        <view class="header">{{entries.header}}</view>
+        <view class="sub_header">{{entries.sub_header}}</view>
+      </view>
+      <view class="price">{{entries.meta.price}}</view>
+    </view>
+  </view>
+  <view class="spec">
+      <view class="item">
+        <view>二氧化碳排放</view>
+        <view class="value"><text>{{entries.meta.carbon_dioxide}}</text>克/每公里</view>
+      </view>
+      <view class="item">
+        <view>综合燃油</view>
+        <view class="value"><text>{{entries.meta.fuel}}</text>升/每公里</view>
+      </view>
+  </view>
+  <view class="action">
+    <view class="desc">{{entries.description}}</view>
+    <button>预约试驾</button>
+  </view>
+</view>
+<swiper class="story" indicator-dots>
+  <block wx:for="{{entries.meta.exterior_design}}" wx:key="header">
+    <swiper-item>
+      <view class="content">
+        <view class="header">{{item.header}}</view>
+        <view class="desc">{{item.description}}</view>
+      </view>
+      <image
+        bind:tap="onPreview"
+        src="{{item.image}}" 
+        mode="aspectFit"
+        data-index="{{index}}"
+        data-path="exterior_design"
+      />
+    </swiper-item>
+  </block>
+</swiper>
+<swiper class="story" indicator-dots>
+  <block wx:for="{{entries.meta.interior_design}}" wx:key="header">
+    <swiper-item>
+      <view class="content">
+        <view class="header">{{item.header}}</view>
+        <view class="desc">{{item.description}}</view>
+      </view>
+      <image 
+        bind:tap="onPreview" 
+        src="{{item.image}}" 
+        mode="aspectFit"
+        data-index="{{index}}"
+        data-path="interior_design"
+      />
+    </swiper-item>
+  </block>    
+</swiper>

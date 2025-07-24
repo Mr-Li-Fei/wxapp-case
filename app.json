@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/stories/index"
+    "pages/stories/index",
+    "pages/entries/index"
   ],
   "window":{
     "navigationBarTitleText": "宁浩汽车",
