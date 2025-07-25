@@ -23,7 +23,7 @@
   </view>
   <view class="action">
     <view class="desc">{{entries.description}}</view>
-    <button>预约试驾</button>
+    <button bind:tap="bookDrive">预约试驾</button>
   </view>
 </view>
 <swiper class="story" indicator-dots>

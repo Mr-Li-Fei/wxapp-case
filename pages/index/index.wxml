@@ -20,12 +20,14 @@
 </swiper>
 <view class="cards">
   <view class="card" hover-class="hover" wx:for="{{entries}}" wx:key="id">
-    <image src="{{item.image}}" mode="aspectFill"/>
-    <view class="content">
-      <view class="header">{{item.header}}</view>
-      <view class="sub-header">{{item.sub_header}}</view>
-      <view class="desc">{{item.description}}</view>
-      <view class="price">{{item.meta.price}}</view>
-    </view>
+    <navigator url="/pages/entries/index?id={{item.id}}">
+      <image src="{{item.image}}" mode="aspectFill"/>
+      <view class="content">
+        <view class="header">{{item.header}}</view>
+        <view class="sub-header">{{item.sub_header}}</view>
+        <view class="desc">{{item.description}}</view>
+        <view class="price">{{item.meta.price}}</view>
+      </view>    
+    </navigator>
   </view>
 </view>

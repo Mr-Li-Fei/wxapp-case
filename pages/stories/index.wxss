@@ -1,1 +1,29 @@
-/* pages/stories/index.wxss */
+.story {
+  height: 100%;
+  padding: 0 10px;
+}
+  .story image, video {
+    width: 100%;
+  }
+  .story .content {
+    /* padding: 46px; */
+    text-align: center;
+    margin: 46px 0;
+  }
+  .story .header {
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .story .sub_header {
+    font-size: 26rpx;
+    font-weight: normal;
+    letter-spacing: 4rpx;
+    text-transform: uppercase;
+  }
+  .story .desc {
+    padding: 10px 46px 0 46px; 
+  }
+  .story image {
+    height: 41.8vh;
+  }

@@ -1,2 +1,23 @@
-<!--pages/stories/index.wxml-->
-<text>pages/stories/index.wxml</text>
+<view class="story" wx:for="{{story_desc}}" wx:key="id">
+    <view class="content">
+      <view class="header">{{item.header}}</view>
+      <view class="sub_header">{{item.original_header}}</view>
+      <view class="desc">{{item.description}}</view>
+    </view>
+    <video
+      hidden="{{currebt_video_id !== item.id}}"
+      id="{{item.id}}"
+      class="video"  
+      src="{{item.video}}"
+      poster="{{item.image}}"
+      object-fit="cover"
+      controls
+    />
+    <image
+      hidden="{{currebt_video_id === item.id}}"
+      src="{{item.image}}"
+      mode="aspectFit"
+      bind:tap="startPlay"
+      data-vid="{{item.id}}"
+    />
+</view>

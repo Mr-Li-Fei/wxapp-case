@@ -8,6 +8,11 @@ Page({
   data: {
     entries: null,
   },
+  bookDrive() {
+    wx.showToast({
+      title: '暂不支持',
+    })
+  },
   onPreview(event) {
     const path = event.target.dataset.path;
     const index = event.target.dataset.index;
