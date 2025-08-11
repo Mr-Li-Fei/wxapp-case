@@ -1,6 +1,24 @@
 <!--pages/test/index.wxml-->
-<text>使用一些微信的功能</text>
-<button type="primary" bind:tap="openCamera">扫码</button>
-<view class="camera">
-  <camera wx:if="{{isShowCamera}}" mode="scanCode" style="width: 200px; height: 200px;"></camera>
+<view class="container">
+  <view wx:if="{{!isShowCamera}}">
+    <text>使用一些微信的功能</text>
+    <button type="primary" bind:tap="openCamera">(wx.scanCode)扫码</button>
+    <button type="primary" bind:tap="openCamera1">(camera)扫码</button>
+    <block wx:for="{{images}}" wx:key="tempFilePath">
+      <view wx:if="{{item.fileType === 'image'}}">
+        <image src="{{item.tempFilePath}}" mode="aspectFit"/>
+      </view>
+      <view wx:else>
+        <video src="{{item.tempFilePath}}"/>
+      </view>
+    </block>
+  </view>
+  <view class="scan-container" wx:else>
+    <camera class="camera"  mode="scanCode" bindscancode="scanCode"></camera>
+    <view class="custom">
+      <text class="scan-tip">将二维码/条形码放入框内</text>
+      <button class="scan-btn" bindtap="openAlbum">从相册选择</button>
+      <icon type="cancel" size="45" bind:tap="onClose"/>
+    </view>
+  </view>
 </view>

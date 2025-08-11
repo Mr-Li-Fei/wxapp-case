@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShowCamera: false
+    isShowCamera: false,
+    isHaveResult: false,
+    images: [],
   },
 
   processScanResult(result) {
@@ -26,6 +28,10 @@ Page({
           }
           if (res.confirm) {
             console.log(res.confirm, 'confirm');
+            this.setData({
+              isShowCamera: false,
+              isHaveResult: false          
+            })
             wx.navigateTo({
               url: `/pages/webview/webview?url=${encodeURIComponent(result)}`,
             })
@@ -36,9 +42,6 @@ Page({
   },
 
   openCamera() {
-    // this.setData({
-    //   isShowCamera:!this.data.isShowCamera
-    // })
     wx.scanCode({
       success:(res) => {
         console.log(res, '扫码结果');
@@ -47,6 +50,44 @@ Page({
         this.processScanResult(result);
       }
     });
+  },
+
+  openCamera1(e) {
+    this.setData({
+      isShowCamera:!this.data.isShowCamera
+    })
+  },
+
+  scanCode(e) {
+    console.log(e, 'target-camera');
+    if(this.data.isHaveResult) return;
+    this.setData({
+      isHaveResult: true,
+    })
+    this.processScanResult(e.detail.result);
+  },
+
+  onClose() {
+    this.setData({
+      isShowCamera: false,
+      isHaveResult: false  
+    })
+  },
+
+  openAlbum() {
+    wx.chooseMedia({
+      count: 6,
+      mediaType: ['mix'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 10,
+      camera: 'back',
+      success: (res) => {
+        console.log(res, '选择的照片');
+        this.setData({
+          images: res.tempFiles,
+        });
+      }
+    })
   },
 
   /**
@@ -90,7 +131,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    this.setData({
+      isShowCamera: false,
+      isHaveResult: false  
+    })
   },
 
   /**
