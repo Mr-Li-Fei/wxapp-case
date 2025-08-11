@@ -1,8 +1,11 @@
 {
+  "lazyCodeLoading": "requiredComponents",
   "pages": [
     "pages/index/index",
     "pages/stories/index",
-    "pages/entries/index"
+    "pages/entries/index",
+    "pages/test/index",
+    "pages/webview/webview"
   ],
   "window":{
     "navigationBarTitleText": "宁浩汽车",
@@ -22,6 +25,12 @@
       {
         "text": "故事",
         "pagePath": "pages/stories/index",
+        "iconPath": "/assets/icons/event.png",
+        "selectedIconPath": "/assets/icons/event-active.png"
+      },
+      {
+        "text": "功能测试",
+        "pagePath": "pages/test/index",
         "iconPath": "/assets/icons/event.png",
         "selectedIconPath": "/assets/icons/event-active.png"
       }

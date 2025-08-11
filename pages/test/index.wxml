@@ -1,0 +1,6 @@
+<!--pages/test/index.wxml-->
+<text>使用一些微信的功能</text>
+<button type="primary" bind:tap="openCamera">扫码</button>
+<view class="camera">
+  <camera wx:if="{{isShowCamera}}" mode="scanCode" style="width: 200px; height: 200px;"></camera>
+</view>
