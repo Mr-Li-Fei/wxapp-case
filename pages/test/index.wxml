@@ -4,6 +4,7 @@
     <text>使用一些微信的功能</text>
     <button type="primary" bind:tap="openCamera">(wx.scanCode)扫码</button>
     <button type="primary" bind:tap="openCamera1">(camera)扫码</button>
+    <button type="primary" bind:tap="openCanvasDetail">Canvas</button>
     <block wx:for="{{images}}" wx:key="tempFilePath">
       <view wx:if="{{item.fileType === 'image'}}">
         <image src="{{item.tempFilePath}}" mode="aspectFit"/>

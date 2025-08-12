@@ -1,0 +1,2 @@
+<!--pages/canvas/canvas.wxml-->
+<canvas type="2d" id="mycanvas" style="border: 1px solid; width: 300px; height: 150px;"/>

@@ -5,7 +5,8 @@
     "pages/stories/index",
     "pages/entries/index",
     "pages/test/index",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/canvas/canvas"
   ],
   "window":{
     "navigationBarTitleText": "宁浩汽车",
